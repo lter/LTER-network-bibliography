@@ -193,3 +193,5 @@ df_sitestats <- full_join(df_sitestats, df_avgsitesperpaper, by = "YEAR")
 colnames(df_sitestats) <- c("YEAR", "num_papers", "num_crosspapers", "avg_num_sites")
 df_sitestats <- full_join(df_sitestats, df_maxsitesperpaper, by = "YEAR")
 df_sitestats <- full_join(df_sitestats, df_avgnumauthors, by = "YEAR")
+
+write.csv(df_sitestats, file = "data/author_site_stats.csv", row.names = F)
